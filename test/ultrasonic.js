@@ -1,6 +1,5 @@
 var serialport = require('serialport');
-var util = require('util');
-var SerialPort = require("serialport").SerialPort
+var SerialPort = require("serialport").SerialPort;
 var serialPort = new SerialPort("/dev/ttyAMA0", {
   baudrate: 9600,
   parser: serialport.parsers.raw
