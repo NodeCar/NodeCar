@@ -1,0 +1,26 @@
+{
+  "name": "node-car",
+  "version": "0.0.1",
+  "description": "NodeCar =======",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denghongcai/NodeCar.git"
+  },
+  "author": "Hongcai Deng <admin@dhchouse.com> (https://www.dhc.house/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/denghongcai/NodeCar/issues"
+  },
+  "homepage": "https://github.com/denghongcai/NodeCar",
+  "dependencies": {
+    "i2c": "^0.2.1",
+    "serialport": "^1.7.4"
+  }
+}
