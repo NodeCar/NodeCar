@@ -10,3 +10,12 @@ wire.scan(function(err, data) {
     console.log(data);
   }
 });
+
+wire.readByte(function(err, res) {
+  if(err) {
+    console.error(err);
+  }
+  else {
+    console.log(res);
+  }
+});
