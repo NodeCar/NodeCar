@@ -6,7 +6,6 @@
 
 var pngtolcd = require('png-to-lcd');
 var Framebuffer = require('framebuffer');
-var mmap = require('mmap-io');
 
 var fb = new Framebuffer('/dev/fb0');
 console.log(fb.toString());
