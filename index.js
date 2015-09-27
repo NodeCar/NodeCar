@@ -7,7 +7,8 @@ var config = require('./config.json');
 var event = require('./event');
 var trigger = require('./trigger');
 
-io.on('connect', function(socket){
+io.on('connection', function (socket) {
+  console.log('client connected');
   event(socket);
   trigger(socket);
 });

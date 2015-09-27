@@ -5,7 +5,7 @@
 var fs = require('fs');
 var path = require('path');
 var basename = path.basename(module.filename);
-var events = [];
+var events = {};
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
@@ -13,12 +13,12 @@ fs.readdirSync(__dirname)
   })
   .forEach(function(file) {
     var name = path.basename(file, '.js');
-    triggers[name] = require(path.resolve(__dirname, file));
+      events[name] = require(path.resolve(__dirname, file));
   });
 
 module.exports = function(socket) {
-  events.map(function(value, key) {
-    value(socket);
+  Object.keys(events).map(function (key) {
+    events[key](socket);
     console.log('Event ' + key + 'initialized');
   });
 };
