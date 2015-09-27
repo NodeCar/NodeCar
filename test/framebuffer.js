@@ -7,7 +7,7 @@
 var pngtolcd = require('png-to-lcd');
 var Framebuffer = require('framebuffer');
 
-var fb = new Framebuffer('/dev/fb0');
+var fb = new Framebuffer('/dev/fb1');
 console.log(fb.toString());
 
 pngtolcd(__dirname + '/../resource/logo.png', function (err, buffer) {
