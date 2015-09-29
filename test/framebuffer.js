@@ -13,6 +13,6 @@ console.log(fb.toString());
 pngtolcd(__dirname + '/../resource/logo.png', function (err, buffer) {
     if (err) console.log(err);
     else {
-        fb.fbp.write(buffer);
+        buffer.copy(fb.fbp);
     }
 });
