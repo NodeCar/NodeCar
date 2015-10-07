@@ -4,15 +4,17 @@
 
 "use strict";
 
-var pngtolcd = require('png-to-lcd');
+var img2rgb = require('img2rgb');
 var Framebuffer = require('framebuffer');
 
 var fb = new Framebuffer('/dev/fb1');
 console.log(fb.toString());
 
-pngtolcd(__dirname + '/../resource/logo.png', function (err, buffer) {
-    if (err) console.log(err);
-    else {
-        buffer.copy(fb.fbp);
-    }
+img2rgb(__dirname + '/../resource/logo.png', 'rgb565', function(err, result) {
+        if(err) console.log(err);
+        else {
+                console.log(result.length);
+		console.log(fb.fbp.length);
+        	result.copy(fb.fbp);
+        }
 });
